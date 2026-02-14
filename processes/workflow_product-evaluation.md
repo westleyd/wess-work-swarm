@@ -1,89 +1,160 @@
 # Product Evaluation Workflow Overview
 
 ## System Purpose
-This workflow enables comprehensive, efficient, and high-quality product evaluation by distributing specialized tasks across four expert roles that collaborate through well-defined processes and communication standards.
+This workflow enables comprehensive, efficient, and high-quality product evaluation by distributing specialized tasks across expert roles that collaborate through well-defined processes and communication standards. The system is designed to operate with minimal human intervention — reserving human attention for genuinely novel or high-stakes decisions while handling routine operations autonomously.
 
-## The Four Roles
+## The Roles
 
-### 1. Product Data Collector
+### Core Product Roles
+
+#### 1. Product Data Collector
 **Core Function**: Gather and structure product specifications, options, and availability data
 
 **Expertise**: Research, data organization, industry standards, product categorization
 
 **Primary Output**: Structured product data matrix with specifications, variants, and availability
 
-### 2. Product Quality Evaluator
+#### 2. Product Quality Evaluator
 **Core Function**: Assess real-world product performance, reliability, and suitability
 
 **Expertise**: Review analysis, testing interpretation, total cost of ownership, use-case matching
 
 **Primary Output**: Quality evaluation report with recommendations, confidence levels, and trade-off analysis
 
-### 3. Product Purchase Advisor
+#### 3. Product Purchase Advisor
 **Core Function**: Optimize purchasing decisions through pricing, timing, and merchant analysis
 
 **Expertise**: Price trends, merchant reliability, timing optimization, risk assessment
 
 **Primary Output**: Purchase recommendation with specific retailers, timing, and total cost breakdown
 
-### 4. Process Efficiency Coordinator
-**Core Function**: Design and continuously improve cross-role communication and workflows
+### Department Operations Roles
 
-**Expertise**: Six Sigma, Lean methodologies, process optimization, data format design
+#### 4. Intake & Prioritization Manager
+**Core Function**: Receive, triage, prioritize, and dispatch all work entering the department
 
-**Primary Output**: Process documentation, data format specifications, performance metrics, improvement plans
+**Expertise**: Queue management, workload balancing, capacity planning, dependency tracking
+
+**Primary Output**: Prioritized work queue, dispatched work packages, capacity forecasts
+
+#### 5. Scope & Decision Delegate
+**Core Function**: Make routine decisions autonomously at workflow decision points, escalating only when genuinely needed
+
+**Expertise**: Decision frameworks, precedent matching, confidence calibration, user preference learning
+
+**Primary Output**: Autonomous scope resolutions, filtering decisions, and escalation-with-recommendation packages
+
+#### 6. Presenter
+**Core Function**: Transform AI-optimized structured data into human-consumable formats for decision-making
+
+**Expertise**: Information design, audience adaptation, data visualization, progressive disclosure
+
+**Primary Output**: Executive summaries, comparison matrices, decision trees, scorecards, and recommendation briefs
+
+### Cross-Department Roles
+
+#### 7. Process Efficiency Coordinator (Cross-Department)
+**Core Function**: Design and continuously improve workflows, data formats, and communication standards across all departments
+
+**Expertise**: Six Sigma, Lean methodologies, process optimization, data format design, agent interviewing
+
+**Primary Output**: Process documentation, data format specifications, performance metrics, improvement plans, job description updates
+
+#### 8. Inter-Department Liaison
+**Core Function**: Manage the interface between this department and all other agent departments
+
+**Expertise**: Cross-department coordination, domain translation, relationship management, protocol negotiation
+
+**Primary Output**: Cross-department request routing, department registry, relationship health reports, translation glossaries
 
 ## High-Level Workflow
 
 ```
-User Request
+Work Arrives (User Request / Cross-Department Request / Internal Task)
      ↓
-[Scope Clarification] ←------ User Feedback Loop
+Inter-Department Liaison ← (if cross-department origin)
+     ↓
+Intake & Prioritization Manager → [Triaged, Prioritized, Dispatched]
+     ↓
+Scope & Decision Delegate → [Scope Resolved]
+     |                           ↓ (if low confidence)
+     |                      Human Feedback Loop
      ↓
 Product Data Collector → [Product Data Matrix]
      ↓
-[Scope Refinement Based on Options] ←------ User Feedback Loop
+Scope & Decision Delegate → [Options Filtered]
+     |                           ↓ (if needed)
+     |                      Human Feedback Loop
      ↓
 Product Quality Evaluator → [Quality Evaluation Report]
      ↓
-[Quality-Based Filtering] ←------ User Feedback Loop
+Scope & Decision Delegate → [Quality-Based Filtering]
+     |                           ↓ (if needed)
+     |                      Human Feedback Loop
      ↓
 Product Purchase Advisor → [Purchase Recommendation]
      ↓
-[Final Decision] ←------ User Feedback Loop
+Presenter → [Human-Consumable Output]
+     ↓
+[Final Decision] ← Human Decision Point
      ↓
 User Makes Purchase
 
 [Throughout Process]
 Process Efficiency Coordinator monitors, optimizes, and improves workflows
+Intake & Prioritization Manager manages queue and workload
+Inter-Department Liaison handles all cross-department interactions
 ```
 
 ## Detailed Workflow Stages
 
-### Stage 1: Initial Request and Scope Definition
+### Stage 0: Work Intake and Prioritization
 
-**Primary Role**: Product Data Collector (with Process Efficiency Coordinator support)
+**Primary Roles**: Intake & Prioritization Manager, Inter-Department Liaison (for cross-department requests)
 
 **Activities**:
-1. User submits product evaluation request
-2. Data Collector assesses request clarity and completeness
-3. If ambiguous, Data Collector creates clarifying questions:
-   - Product category or type
-   - Critical specifications or features
-   - Use case or application
-   - Constraints (size, budget, compatibility)
-   - Preferences (materials, brands, styles)
+1. Work arrives via any channel:
+   - Direct user request
+   - Cross-department request (received and translated by Inter-Department Liaison)
+   - Internally generated task (follow-up, rework, process improvement)
+2. Intake & Prioritization Manager validates request completeness
+3. Classifies by type, complexity, urgency, and source
+4. Applies prioritization framework:
+   - **Priority 1 (Critical)**: Time-sensitive, blocking another department, explicit urgency
+   - **Priority 2 (High)**: Standard user requests, cross-department SLA commitments
+   - **Priority 3 (Normal)**: Internal improvements, non-urgent follow-ups
+   - **Priority 4 (Low)**: Exploratory work, backlog items
+5. Dispatches to the appropriate role with a clear work package
 
-**Escalation Triggers**:
-- Request is too vague to determine product category
-- User's stated requirements seem contradictory
-- Scope could be interpreted multiple ways
+**Output**: Prioritized, dispatched work item with full context
 
-**Human Loop**: User clarifies scope, provides constraints, states priorities
+---
+
+### Stage 1: Scope Definition and Resolution
+
+**Primary Roles**: Scope & Decision Delegate, Product Data Collector
+
+**Activities**:
+1. Scope & Decision Delegate evaluates the request:
+   - Checks precedent library for similar requests
+   - Applies scope decision framework for the product category
+   - Assesses confidence level
+2. If confidence is **high**: Resolves scope autonomously and passes to Data Collector
+3. If confidence is **medium**: Resolves scope but flags for human review
+4. If confidence is **low**: Escalates to user with a clear recommendation and specific questions
+5. Data Collector assesses scope feasibility once defined
+
+**Escalation Triggers** (to human):
+- First-time product category with no precedents
+- Request too vague to infer category (e.g., "a good laptop" with no use case)
+- Contradictory requirements
+- User has explicitly requested involvement in scope definition
+
+**Human Loop**: Only when Scope & Decision Delegate determines human input is genuinely needed
 
 **Process Coordinator Role**:
-- Provides standardized scope definition template if needed
-- Helps Data Collector determine which product properties to investigate
+- Provides standardized scope definition templates
+- Tracks scope resolution patterns for framework improvement
 
 **Output**: Clear, documented product evaluation scope
 
@@ -102,13 +173,13 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
    - Certifications and compliance (UL, IP ratings, Energy Star, etc.)
    - Available variants and configurations
    - Current availability and stock status
-4. Structure data in standardized format
+4. Structure data in standardized format (machine-parseable, per Process Coordinator specs)
 5. Flag data gaps, conflicts, or uncertainties
 6. Verify information across multiple sources
 
 **Decision Points**:
 - **Proceed**: Standard product with clear specifications available
-- **Escalate to User**: Critical feature availability unclear and may impact decision
+- **Escalate to User** (via Scope & Decision Delegate): Critical feature availability unclear
 - **Request from Quality Evaluator**: Clarification on which attributes are most important
 - **Consult Process Coordinator**: Data structure doesn't fit product type well
 
@@ -119,7 +190,7 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 - Conflicting information noted with sources?
 - Units normalized and consistent?
 
-**Output**: Product Data Matrix containing:
+**Output**: Product Data Matrix (structured JSON/table) containing:
 - List of product options with model numbers
 - Structured specifications for each option
 - Availability and pricing snapshot
@@ -131,28 +202,24 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 
 ### Stage 3: Option Review and Scope Refinement
 
-**Primary Role**: User (with support from all product roles as needed)
+**Primary Roles**: Scope & Decision Delegate (with user input if needed)
 
 **Activities**:
-1. User reviews available product options
-2. User evaluates if scope should be adjusted based on:
-   - Unexpected options discovered (e.g., ceramic coating available)
-   - Narrower range than expected (only 2 models meet criteria)
-   - Broader range than manageable (50+ options found)
-   - New features/attributes discovered that matter
-3. User may refine criteria:
-   - Add must-have features based on discoveries
-   - Relax constraints if too restrictive
-   - Adjust budget based on available options
-   - Prioritize certain attributes over others
+1. Scope & Decision Delegate reviews collected options against scope criteria
+2. Applies decision framework:
+   - Too many options? → Apply filtering criteria to narrow
+   - Too few options? → Flag for scope expansion
+   - Unexpected discoveries? → Assess if scope should adjust
+3. If within framework parameters: Makes autonomous filtering decision
+4. If outside parameters: Escalates to human with recommendation
 
 **Decision Paths**:
 - **Proceed with all options**: Continue to quality evaluation
-- **Narrow scope**: Data Collector filters to subset, or Quality Evaluator deprioritizes certain options
-- **Expand scope**: Data Collector researches additional variants or categories
-- **Single option found**: May skip Quality Evaluation and proceed directly to Purchase Advisor
+- **Narrow scope**: Apply filtering criteria based on user preferences or precedent
+- **Expand scope**: Request Data Collector to research additional variants
+- **Single option found**: May skip Quality Evaluation and proceed to Purchase Advisor
 
-**Human Loop**: This is typically a human decision point, but may be skipped if initial scope was very precise
+**Human Loop**: Only when Scope & Decision Delegate's confidence is insufficient
 
 **Output**: Confirmed product list for quality evaluation
 
@@ -184,64 +251,47 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 
 **Decision Points**:
 - **Proceed**: Sufficient data available for evaluation
-- **Request from Data Collector**: Need additional specifications for quality assessment
-- **Escalate to User**: 
+- **Request from Data Collector**: Need additional specifications
+- **Escalate to User** (via Scope & Decision Delegate):
   - Use case priorities unclear
   - Trade-offs require user preference input
-  - Compatibility requirements discovered (e.g., "needs $300 mixer")
-  - Comprehensiveness adjustment needed
+  - Compatibility requirements discovered
 - **Consult Process Coordinator**: Evaluation framework doesn't fit product type
 
-**Quality Checks**:
-- Review sources diverse and reliable?
-- Confidence levels appropriately calibrated?
-- Total cost of ownership thoroughly analyzed?
-- Use-case suitability clearly assessed?
-- Risks and concerns flagged?
-
-**Output**: Quality Evaluation Report containing:
+**Output**: Quality Evaluation Report (structured data) containing:
 - Executive summary with top recommendations
 - Comparative analysis and rankings
-- Detailed per-product evaluations:
-  - Quality assessment
-  - User satisfaction summary
-  - Expert testing results
-  - TCO breakdown
-  - Confidence levels
-  - Suitability scores
-  - Compatibility requirements
+- Detailed per-product evaluations
 - Manufacturer/retailer assessments
 - Recommendations for purchase evaluation
 - Products to avoid with rationale
+- Confidence levels for all assessments
 
 ---
 
 ### Stage 5: Quality-Based Filtering
 
-**Primary Role**: User (with Quality Evaluator support)
+**Primary Roles**: Scope & Decision Delegate (with user input if needed)
 
 **Activities**:
-1. User reviews quality evaluation findings
-2. User decides which products to advance to purchase evaluation:
+1. Scope & Decision Delegate reviews quality evaluation results
+2. Applies quality filtering framework:
    - Eliminate products below quality threshold
-   - Select 2-5 top options for price comparison
-   - May request deeper analysis on specific products
-   - May adjust priorities based on trade-offs discovered
-3. User provides input on:
-   - Urgency of purchase (need now vs. can wait)
-   - Budget constraints or flexibility
-   - Merchant preferences
-   - Warranty/insurance preferences
+   - Select top 2-5 options for purchase evaluation
+   - Apply user preference profile if available
+3. Assesses confidence in the filtering decision
+4. If high confidence: Filters autonomously, includes user preference context for Purchase Advisor
+5. If low confidence: Escalates to user with quality summary and recommendation
 
 **Decision Paths**:
 - **Multiple quality options**: Proceed to purchase evaluation with 2-5 options
-- **Single clear winner**: May proceed to purchase evaluation with one option
+- **Single clear winner**: Proceed with one option
 - **No acceptable options**: Return to Data Collection with revised scope
-- **Quality concerns on all options**: May need to expand search or reconsider requirements
+- **Quality concerns on all options**: Escalate with options
 
-**Human Loop**: User makes quality-based decisions, may refine based on discoveries
+**Human Loop**: Only when the Scope & Decision Delegate determines human judgment is genuinely needed (e.g., significant trade-offs between quality and price with no clear user preference signal)
 
-**Output**: Filtered product list for purchase evaluation with user preferences on timing, budget, urgency
+**Output**: Filtered product list for purchase evaluation with preferences on timing, budget, urgency
 
 ---
 
@@ -253,11 +303,7 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 1. Receive quality-vetted product list and user preferences
 2. Research current pricing across multiple retailers/wholesalers
 3. Analyze historical pricing patterns and trends
-4. Identify optimal purchase timing:
-   - Current deals and promotions
-   - Seasonal sale patterns
-   - Product lifecycle timing (new model releases)
-   - Stock availability trends
+4. Identify optimal purchase timing
 5. Evaluate merchant reliability and reputation
 6. Calculate total delivered cost (price + shipping + tax + fees)
 7. Assess warranty and protection plan value
@@ -268,45 +314,54 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 **Decision Points**:
 - **Proceed**: Clear best purchase path identified
 - **Request from Quality Evaluator**: How quality differences justify price premiums
-- **Escalate to User**:
+- **Escalate to User** (via Scope & Decision Delegate):
   - Time vs. savings requires user priority input
   - Multiple purchase paths with different trade-offs
   - Merchant reliability concerns
-  - Gray market or unauthorized dealers are cheapest
-  - Deal seems too good to be true
 - **Consult Process Coordinator**: Purchase recommendation framework needs adjustment
 
-**Quality Checks**:
-- Minimum 3-5 retailers compared per product?
-- Total cost calculation complete and accurate?
-- Merchant reliability assessed?
-- Timing recommendation has clear rationale?
-- Risks identified and communicated?
-
-**Output**: Purchase Recommendation containing:
-- Executive summary (where to buy, when to buy)
-- Purchase options comparison by retailer:
-  - Total delivered cost
-  - Merchant reliability tier
-  - Shipping timeframe
-  - Return policy
-  - Stock status
+**Output**: Purchase Recommendation (structured data) containing:
+- Specific purchase path recommendation
+- Purchase options comparison by retailer
 - Timing analysis and recommendation
 - Warranty/protection plan assessment
 - Risk assessment by option
-- Specific action items for user
+- Specific action items
 
 ---
 
-### Stage 7: Final Purchase Decision
+### Stage 7: Presentation for Human Decision
 
-**Primary Role**: User
+**Primary Role**: Presenter
 
 **Activities**:
-1. User reviews complete evaluation package:
-   - Product specifications
-   - Quality assessment
-   - Purchase recommendations
+1. Receive structured outputs from all preceding stages
+2. Determine the appropriate presentation format based on:
+   - Decision complexity (single recommendation vs. complex trade-offs)
+   - Audience (end-user, executive, cross-department)
+   - Urgency
+3. Transform structured data into human-consumable format:
+   - **Simple evaluation**: Recommendation Brief
+   - **Multi-product comparison**: Product Comparison Matrix + Executive Summary
+   - **Priority-dependent decision**: Decision Tree Chart
+   - **High-stakes purchase**: Risk/Benefit Table + Cost Breakdown Waterfall
+4. Apply progressive disclosure (summary → comparison → full detail)
+5. Validate that presentation accurately represents source data
+6. Deliver formatted output
+
+**Output**: Human-consumable presentation in the appropriate format, with source data references
+
+---
+
+### Stage 8: Final Purchase Decision
+
+**Primary Role**: User (human)
+
+**Activities**:
+1. User reviews the Presenter's formatted output:
+   - Executive summary or recommendation brief
+   - Comparison matrix or decision tree
+   - Detailed data available for drill-down
 2. User makes final decision on:
    - Which product to purchase
    - Which retailer to use
@@ -319,35 +374,37 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
   - Accuracy of evaluation
   - Product satisfaction
   - Purchase experience
-  - Process improvement suggestions
+  - Presentation format usefulness
+- Feedback is captured by the Scope & Decision Delegate as precedent and by the Process Efficiency Coordinator for improvement
 
 **Output**: User makes informed purchase decision
 
 ---
 
-## Cross-Cutting Process: Continuous Improvement
+## Cross-Cutting Processes
 
-**Primary Role**: Process Efficiency Coordinator (ongoing throughout)
+### Continuous Improvement (Process Efficiency Coordinator — Cross-Department)
 
 **Activities**:
-1. **Monitor Performance**:
+1. **Monitor Performance** across the department and across department boundaries:
    - Track cycle times at each stage
    - Measure escalation and kick-back rates
    - Monitor data quality and completeness
    - Assess user satisfaction
+   - Track autonomy metrics (decisions made without human escalation)
 
-2. **Gather Feedback**:
+2. **Gather Feedback** from all roles, including other departments:
    - Regular interviews with each role
    - Document pain points and inefficiencies
    - Collect suggestions for improvement
-   - Identify frequently missing data
+   - Review job descriptions for accuracy
 
 3. **Analyze and Improve**:
    - Apply DMAIC methodology to problems
    - Eliminate waste using Lean principles
    - Design better data formats
    - Streamline handoff processes
-   - Update documentation and templates
+   - Update documentation, templates, and job descriptions
 
 4. **Implement and Control**:
    - Roll out improvements systematically
@@ -359,72 +416,77 @@ Process Efficiency Coordinator monitors, optimizes, and improves workflows
 - **With Data Collector**: Format specifications, property checklists, source priorities
 - **With Quality Evaluator**: Evaluation frameworks, confidence indicators, output templates
 - **With Purchase Advisor**: Pricing data structures, merchant rating systems
-- **With All Roles**: Escalation protocols, communication standards, performance metrics
+- **With Intake & Prioritization Manager**: Queue health, bottleneck patterns
+- **With Scope & Decision Delegate**: Decision framework accuracy, calibration data
+- **With Presenter**: Template standards, format alignment with data structures
+- **With Inter-Department Liaison**: Cross-department protocol standards
+- **With All Departments**: Cross-department process harmonization
 
-**Output**: 
-- Updated process documentation
-- Improved data formats
-- Performance metrics and trends
-- Continuous improvement roadmap
+### Cross-Department Coordination (Inter-Department Liaison)
+
+**Activities**:
+1. Receive and translate incoming cross-department requests
+2. Route translated requests to the Intake & Prioritization Manager
+3. Track cross-department request status and provide updates
+4. Send outgoing requests to other departments in their expected format
+5. Maintain the department registry (contacts, protocols, terminology maps)
+6. Negotiate priority and timeline with other departments
+7. Resolve cross-department conflicts at the department boundary
+
+### Queue and Workload Management (Intake & Prioritization Manager)
+
+**Activities**:
+1. Maintain a visible, real-time work queue
+2. Monitor workload balance across agents
+3. Reprioritize dynamically as circumstances change
+4. Track queue health metrics (depth, wait time, throughput, aging)
+5. Forecast upcoming workload and flag capacity constraints
+6. Coordinate with Inter-Department Liaison on external request timing
 
 ---
 
 ## Communication and Escalation Pathways
 
-### Standard Communication Flow (Sequential)
+### Standard Communication Flow
 ```
-Data Collector → Quality Evaluator → Purchase Advisor → User
+[External Departments] ↔ Inter-Department Liaison
+                                ↓
+[All Sources] → Intake & Prioritization Manager → [Appropriate Agent]
+                                ↓
+Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
+                          ↑                                    ↑
+              Scope & Decision Delegate            Scope & Decision Delegate
+           (autonomous decisions at each gate)
 ```
 
 ### Escalation Pathways
 
-**To User** (from any role):
-- Ambiguous requirements
-- Critical information gaps
-- Decision requiring user preferences
-- Unexpected findings impacting scope
-- Trade-offs requiring priority clarification
+**To User** (always via Scope & Decision Delegate or Presenter):
+- Genuinely ambiguous requirements that cannot be resolved from context or precedent
+- High-stakes decisions exceeding autonomous authority thresholds
+- Trade-offs requiring explicit user priority input
+- Novel situations with no applicable framework
 
-**Between Adjacent Roles**:
-- **Data Collector ↔ Quality Evaluator**: 
-  - Specification clarifications
-  - Additional data requests
-  - Product categorization questions
-  
-- **Quality Evaluator ↔ Purchase Advisor**:
-  - Quality threshold for purchase consideration
-  - Warranty recommendation based on reliability
-  - How quality justifies price differences
+**Between Adjacent Product Roles**:
+- **Data Collector ↔ Quality Evaluator**: Specification clarifications, additional data requests
+- **Quality Evaluator ↔ Purchase Advisor**: Quality thresholds, warranty recommendations
 
-**Cross-Role Consultation**:
-- Any role can consult any other role for expertise
-- Example: Purchase Advisor asks Data Collector about product variants
-- Example: Data Collector asks Quality Evaluator which specs are most critical
+**To Operations Roles**:
+- **To Intake & Prioritization Manager**: Capacity concerns, work completion, new internal tasks
+- **To Scope & Decision Delegate**: Decisions at any gate point, scope clarifications
+- **To Presenter**: Structured outputs ready for human formatting
+- **To Inter-Department Liaison**: Cross-department needs, external dependency issues
 
-**To Process Coordinator** (from any role):
-- Data format doesn't accommodate needed information
-- Process inefficiency identified
-- Unclear escalation protocol
-- Suggestion for improvement
-- Need for new template or tool
+**To Cross-Department Roles**:
+- **To Process Efficiency Coordinator**: Format issues, inefficiencies, improvement suggestions, job description gaps
+- **To Inter-Department Liaison**: Any need that involves another department
 
 ### Kick-Back Protocols
 
 **When to Kick Back** (vs. escalate to user):
 - **Kick Back to Previous Role**: Missing information that previous role should provide
-  - Quality Evaluator → Data Collector: Missing critical specifications
-  - Purchase Advisor → Quality Evaluator: Need quality threshold defined
-  
-- **Escalate to User**: Information that only user can provide or decision only user can make
-  - Ambiguous priorities
-  - Preference questions
-  - Budget constraints
-  - Timing urgency
-
-**Kick-Back Format**:
-- Specific: Clearly state what's missing or unclear
-- Contextual: Explain why it's needed
-- Constructive: Suggest potential sources or approaches if possible
+- **Route to Scope & Decision Delegate**: Decision that may be resolvable from frameworks/precedent before escalating to user
+- **Escalate to User** (via Scope & Decision Delegate): Information or decision only user can provide
 
 ---
 
@@ -440,7 +502,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - Source citations
 - Last updated timestamp
 
-**Format**: Structured table or JSON schema (as defined by Process Coordinator)
+**Format**: Structured JSON or table schema (as defined by Process Coordinator)
 
 ### Quality Evaluation Report (Quality Evaluator → Purchase Advisor)
 
@@ -455,7 +517,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 
 **Format**: Structured report with sections (as defined by Process Coordinator)
 
-### Purchase Recommendation (Purchase Advisor → User)
+### Purchase Recommendation (Purchase Advisor → Presenter)
 
 **Required Elements**:
 - Specific purchase path recommendation (retailer, timing)
@@ -466,7 +528,18 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - Warranty/protection plan evaluation
 - Action items for user
 
-**Format**: Report with comparison tables (as defined by Process Coordinator)
+**Format**: Structured data (as defined by Process Coordinator), ready for Presenter transformation
+
+### Presenter Output (Presenter → User)
+
+**Required Elements**:
+- Appropriate human-consumable format based on decision type
+- Progressive disclosure (summary → detail)
+- Confidence levels clearly communicated
+- Source data references for drill-down
+- Clear recommendation and action items
+
+**Format**: Executive summary, comparison matrix, decision tree, or other format per the Presenter's format selection guide
 
 ---
 
@@ -474,31 +547,34 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 
 ### Mandatory Human Loops
 
-1. **Initial Scope Clarification** (if request ambiguous)
-   - Triggered by: Data Collector uncertainty
+1. **Final Purchase Decision**
+   - Triggered by: Completion of full evaluation pipeline and Presenter output
+   - Purpose: User makes actual purchase decision
+   - *This is the only truly mandatory human decision point*
+
+### Conditional Human Loops (via Scope & Decision Delegate)
+
+2. **Scope Clarification** (if Scope & Decision Delegate confidence is low)
+   - Triggered by: Ambiguous request that cannot be resolved from context or precedent
    - Purpose: Define clear product evaluation scope
 
-2. **Quality-Based Filtering**
-   - Triggered by: Completion of quality evaluation
-   - Purpose: Select which products to advance to purchase evaluation
+3. **Option Review** (if filtering decision requires user preference)
+   - Triggered by: Too many options with no clear filtering criteria, or significant scope change
+   - Purpose: Refine scope based on available options
 
-3. **Final Purchase Decision**
-   - Triggered by: Completion of purchase recommendation
-   - Purpose: User makes actual purchase decision
+4. **Quality-Based Filtering** (if trade-offs require explicit user priority)
+   - Triggered by: Significant quality vs. price trade-offs with no clear preference signal
+   - Purpose: Select which products to advance to purchase evaluation
 
 ### Optional Human Loops
 
-1. **Option Review After Data Collection**
-   - Triggered by: User request or significant option discovery
-   - Purpose: Refine scope based on available options
-
-2. **Mid-Evaluation Clarification**
-   - Triggered by: Any role encountering ambiguity
+5. **Mid-Evaluation Clarification**
+   - Triggered by: Any role encountering genuinely unresolvable ambiguity
    - Purpose: Clarify priorities, preferences, or requirements
 
-3. **Post-Purchase Feedback**
+6. **Post-Purchase Feedback**
    - Triggered by: User choice or process improvement cycle
-   - Purpose: Improve future evaluations
+   - Purpose: Improve future evaluations and calibrate decision frameworks
 
 ---
 
@@ -507,46 +583,52 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 ### Simple Product (e.g., Ice Cream Scoop)
 
 **Streamlined Process**:
-1. Data Collection: 30 minutes - basic specs, handful of options
-2. Quality Evaluation: 30 minutes - quick review analysis, material comparison
-3. Purchase Optimization: 15 minutes - price check, best retailer
-4. Total cycle: ~1-2 hours
+1. Intake: Immediate dispatch (low complexity)
+2. Scope: Autonomous resolution by Scope & Decision Delegate (strong precedent)
+3. Data Collection: Basic specs, handful of options
+4. Quality Evaluation: Quick review analysis, material comparison
+5. Purchase Optimization: Price check, best retailer
+6. Presentation: Recommendation Brief
+7. **Zero human loops expected** (unless user explicitly requests involvement)
 
 **Characteristics**:
-- Minimal human loops
-- Lower comprehensiveness level
-- Simplified outputs
-- Few escalations
+- Scope & Decision Delegate handles all gates autonomously
+- Presenter produces a Recommendation Brief
+- Minimal queue time
 
 ### Complex Product (e.g., Water Distiller)
 
 **Comprehensive Process**:
-1. Data Collection: 2-3 hours - detailed specs, certifications, multiple variants
-2. Quality Evaluation: 3-5 hours - extensive review analysis, TCO calculation, testing research
-3. Purchase Optimization: 1-2 hours - pricing analysis, warranty evaluation
-4. Total cycle: 1-2 days
+1. Intake: Standard prioritization
+2. Scope: Likely autonomous (common category)
+3. Data Collection: Detailed specs, certifications, multiple variants
+4. Option Review: May require one human loop (many options with varied features)
+5. Quality Evaluation: Extensive review analysis, TCO calculation, testing research
+6. Quality Filtering: Possible human loop (significant trade-offs)
+7. Purchase Optimization: Pricing analysis, warranty evaluation
+8. Presentation: Product Comparison Matrix + Executive Summary
 
 **Characteristics**:
-- Multiple human loops likely
-- High comprehensiveness level
-- Detailed outputs
-- More escalations and clarifications
+- 0-2 human loops expected
+- Presenter produces layered output (summary + matrix + detail)
+- Cross-role consultation likely
 
 ### Product Category (e.g., SUV with specific features)
 
 **Exploratory Process**:
-1. Data Collection: 4-6 hours - multiple models, trim comparison, feature matrix
-2. Option Review: Human loop to narrow based on available features
-3. Quality Evaluation: 4-8 hours - review analysis across models, reliability comparison
-4. Quality Filtering: Human loop to select finalists
-5. Purchase Optimization: 2-4 hours - dealer inventory, pricing, negotiation context
-6. Total cycle: 2-4 days
+1. Intake: Standard prioritization, flagged as high-complexity
+2. Scope: May require human loop (many use-case dimensions)
+3. Data Collection: Multiple models, trim comparison, feature matrix
+4. Option Review: Human loop likely (many options to narrow)
+5. Quality Evaluation: Review analysis across models, reliability comparison
+6. Quality Filtering: Human loop likely (significant trade-offs)
+7. Purchase Optimization: Dealer inventory, pricing, negotiation context
+8. Presentation: Decision Tree Chart + Comparison Matrix + Executive Summary
 
 **Characteristics**:
-- Multiple human loops expected
-- Variable comprehensiveness by stage
+- 2-3 human loops expected
+- Presenter produces multiple complementary formats
 - Iterative refinement of scope
-- Frequent cross-role consultation
 
 ---
 
@@ -572,13 +654,43 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - Timing accuracy (price predictions)
 - User satisfaction with purchase experience
 
-**Process Efficiency Coordinator**:
+**Intake & Prioritization Manager**:
+- Intake-to-dispatch time
+- Queue health (depth, wait time, aging)
+- Workload balance across agents
+- Priority accuracy
+
+**Scope & Decision Delegate**:
+- Autonomous decision rate
+- Decision accuracy (user override rate)
+- Escalation appropriateness
+- Framework coverage
+
+**Presenter**:
+- Decision facilitation rate (users able to decide from presentation alone)
+- Data fidelity (accurate representation of source data)
+- Template reuse rate
+- Revision rate
+
+**Process Efficiency Coordinator** (Cross-Department):
 - Process cycle time reduction
 - Escalation/kick-back rate trends
 - Agent satisfaction with processes
 - Implementation rate of improvements
+- Cross-department best practice propagation
+
+**Inter-Department Liaison**:
+- Cross-department request fulfillment time
+- SLA adherence
+- Translation accuracy
+- Relationship health scores
 
 ### Overall System Performance
+
+**Autonomy**:
+- Human escalation rate (target: decrease over time as frameworks mature)
+- Autonomous decision accuracy
+- End-to-end completions without human loop (for simple products)
 
 **Efficiency**:
 - Total cycle time from request to recommendation
@@ -589,9 +701,11 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - User satisfaction with recommendations
 - Purchase satisfaction post-purchase
 - Accuracy of predictions (quality, pricing, timing)
+- Presentation effectiveness (decision facilitation)
 
 **Collaboration**:
 - Inter-role friction incidents
+- Cross-department SLA adherence
 - Communication clarity ratings
 - Process adherence percentage
 
@@ -602,9 +716,13 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 ### Process Ownership
 
 **Data Collection Process**: Owned by Data Collector, optimized by Process Coordinator
-**Quality Evaluation Process**: Owned by Quality Evaluator, optimized by Process Coordinator  
+**Quality Evaluation Process**: Owned by Quality Evaluator, optimized by Process Coordinator
 **Purchase Optimization Process**: Owned by Purchase Advisor, optimized by Process Coordinator
-**Cross-Role Communication**: Owned by Process Coordinator
+**Intake & Queue Management**: Owned by Intake & Prioritization Manager
+**Decision Frameworks**: Owned by Scope & Decision Delegate, calibrated with Process Coordinator
+**Presentation Formats**: Owned by Presenter, aligned with Process Coordinator standards
+**Cross-Role Communication**: Owned by Process Coordinator (cross-department)
+**Cross-Department Communication**: Owned by Inter-Department Liaison, standardized by Process Coordinator
 
 ### Change Management
 
@@ -648,12 +766,14 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - AI-assisted review analysis and summarization
 - Price tracking and alert systems
 - Automated format validation
+- Scope & Decision Delegate learning from user override patterns
 
 **Expanded Capabilities**:
 - Support for evaluating product bundles
 - Sustainability and environmental impact assessment
 - Long-term ownership cost modeling (multi-year)
 - Comparative industry analysis for business products
+- Multi-department composite evaluations
 
 **Process Improvements**:
 - Predictive analytics for purchase timing
@@ -664,9 +784,10 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 ### Scalability Considerations
 
 **As Volume Increases**:
+- Intake & Prioritization Manager enables queueing and load balancing
 - Templated workflows for common product types
 - Specialization within roles (e.g., electronics specialist Data Collector)
-- Automated first-pass filtering
+- Automated first-pass filtering via Scope & Decision Delegate frameworks
 - Priority queuing for urgent requests
 
 **As Complexity Increases**:
@@ -674,6 +795,13 @@ Data Collector → Quality Evaluator → Purchase Advisor → User
 - Specialized sub-roles for specific domains
 - Advanced analytics and modeling
 - Dedicated research tools and databases
+- Cross-department composite workflows
+
+**As Departments Multiply**:
+- Inter-Department Liaison scales cross-department coordination
+- Process Efficiency Coordinator propagates standards across all departments
+- Shared interchange formats reduce integration overhead
+- Department registry enables self-service discovery
 
 ---
 
@@ -683,11 +811,13 @@ This workflow system achieves comprehensive product evaluation through:
 
 1. **Specialization**: Each role focuses on what they do best
 2. **Collaboration**: Clear handoffs and communication pathways
-3. **User-Centricity**: Multiple human loops for alignment and decision-making
-4. **Quality Focus**: Checks and balances at every stage
-5. **Continuous Improvement**: Systematic optimization over time
+3. **Autonomy**: Scope & Decision Delegate reduces mandatory human loops; Intake & Prioritization Manager self-manages the queue
+4. **Cross-Department Readiness**: Inter-Department Liaison and cross-department Process Efficiency Coordinator enable seamless collaboration with other departments
+5. **Human-Optimized Output**: Presenter transforms agent data into decision-ready formats
+6. **Quality Focus**: Checks and balances at every stage
+7. **Continuous Improvement**: Systematic optimization over time
 
-The result is informed, confident purchase decisions backed by thorough research, quality analysis, and optimized purchasing strategy.
+The result is informed, confident purchase decisions backed by thorough research, quality analysis, and optimized purchasing strategy — with human attention reserved for the decisions that genuinely need it.
 
 ---
 
@@ -695,14 +825,19 @@ The result is informed, confident purchase decisions backed by thorough research
 
 | Scenario | Primary Role | May Consult | Escalates To | Output Goes To |
 |----------|--------------|-------------|--------------|----------------|
-| Scope Definition | Data Collector | Process Coord. | User | User approval |
-| Data Collection | Data Collector | Quality Eval. | User, Process Coord. | Quality Evaluator |
-| Quality Assessment | Quality Evaluator | Data Collector | User, Process Coord. | User, Purchase Advisor |
-| Purchase Optimization | Purchase Advisor | Quality Eval. | User, Process Coord. | User |
-| Process Improvement | Process Coord. | All Roles | User/Leadership | All Roles |
-| Data Format Design | Process Coord. | All Roles | User (if impacts experience) | All Roles |
-| Ambiguity Resolution | Originating Role | Relevant Roles | User or Process Coord. | Requesting Role |
+| Work Intake | Intake & Prioritization Mgr | Inter-Dept Liaison | Human (capacity crises) | Appropriate Agent |
+| Scope Definition | Scope & Decision Delegate | Data Collector, Precedent Library | Human (low confidence) | Data Collector |
+| Data Collection | Data Collector | Quality Eval., Process Coord. | Scope & Decision Delegate | Quality Evaluator |
+| Option Filtering | Scope & Decision Delegate | Data Collector | Human (low confidence) | Quality Evaluator |
+| Quality Assessment | Quality Evaluator | Data Collector, Process Coord. | Scope & Decision Delegate | Purchase Advisor |
+| Quality Filtering | Scope & Decision Delegate | Quality Evaluator | Human (low confidence) | Purchase Advisor |
+| Purchase Optimization | Purchase Advisor | Quality Eval., Process Coord. | Scope & Decision Delegate | Presenter |
+| Presentation | Presenter | Source Agents, Scope Delegate | Human (contradictory data) | User |
+| Final Decision | User | Any role | N/A | Purchase execution |
+| Process Improvement | Process Coord. (cross-dept) | All Roles, All Depts | Leadership | All Roles |
+| Cross-Dept Coordination | Inter-Dept Liaison | All Roles, Other Depts | Human (strategic conflicts) | Intake & Prioritization Mgr |
+| Data Format Design | Process Coord. (cross-dept) | All Roles | Human (if impacts experience) | All Roles |
 
 ---
 
-**This workflow balances structure with flexibility, enabling high-quality product evaluations while continuously improving efficiency and effectiveness.**
+**This workflow balances structure with flexibility, enabling high-quality product evaluations while progressively increasing autonomy and reducing the need for human intervention in routine operations.**
