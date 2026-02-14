@@ -85,6 +85,60 @@ The current workflow has several mandatory human decision points: scope clarific
 - Any decision where confidence falls below the minimum threshold
 - Conflicting requirements that cannot be resolved by applying the user's preference profile
 
+## Oversight and Structural Limitations
+
+### Current Scope Suitability
+
+This role is designed for and currently safe within **common product-evaluation use cases** — consumer goods, household appliances, electronics, tools, and similar categories where the consequences of a suboptimal autonomous decision are limited to user inconvenience or moderate financial impact.
+
+**This role's autonomous decision authority is NOT suitable, without additional oversight structures, for high-stakes domains** including but not limited to:
+- **Emergency-alert services** or safety-critical systems where a missed consideration could affect human safety
+- **Hardware procurement for critical infrastructure** where failure modes have cascading consequences
+- **Medical devices or health-related products** where regulatory and safety requirements are non-negotiable
+- **Legal or compliance-sensitive evaluations** where autonomous scope decisions could create liability
+- **High-dollar procurement** (thresholds to be defined per department) where financial risk exceeds routine levels
+
+Before extending this role to higher-stakes departments, the oversight gap identified below must be addressed.
+
+### Known Oversight Gap
+
+The current design relies on three mechanisms for catching bad autonomous decisions:
+
+1. **Self-calibration** — the Delegate tracks its own accuracy and adjusts thresholds
+2. **Post-hoc human review** — the user catches errors at the final decision point
+3. **Process Efficiency Coordinator** — reviews patterns in calibration data periodically
+
+These mechanisms are insufficient for several failure modes:
+
+- **Silent scope exclusion**: The Delegate confidently resolves scope in a way that filters out something the user would have wanted, and no one catches it because the excluded option never surfaces downstream
+- **Confidence miscalibration (unknown unknowns)**: The Delegate believes it is high-confidence in a situation it has no basis to assess — it doesn't know what it doesn't know
+- **Domain boundary crossings**: A request touches safety, legal, or compliance considerations that the Delegate has no framework to recognize, let alone evaluate
+
+These failure modes are acceptable risk for common consumer product evaluations. They become unacceptable risk as departments scale into higher-stakes domains.
+
+### Mandatory Escalation Categories
+
+Regardless of confidence level, the following categories **must always escalate** and cannot be resolved autonomously:
+
+- **Safety-implicated decisions**: Any evaluation where product failure could cause physical harm
+- **Legal or regulatory scope**: Any evaluation touching regulated products, certifications required by law, or liability considerations
+- **High-dollar thresholds**: Purchases or commitments exceeding a configurable financial threshold (to be set per department)
+- **Irreversible commitments**: Decisions that cannot be undone or revisited after execution
+- **First-of-kind domains**: Product categories or decision types the department has never handled before, until sufficient precedent is established
+
+This list should be reviewed and expanded by the Workflow Architect as new departments and use cases are added to the organization.
+
+### Recommended Future Oversight Mechanisms
+
+The following are documented for evaluation as the organization scales:
+
+1. **Audit sampling**: A dedicated reviewer (or the Workflow Architect) samples a percentage of autonomous decisions for correctness — not every decision, but enough to catch systematic drift
+2. **Peer review gates**: Another agent spot-checks the Delegate's reasoning before the decision takes effect, particularly for medium-confidence decisions
+3. **Outcome tracking**: Systematic post-decision outcome tracking to detect patterns of poor decisions that aren't caught by user overrides (because the user accepted a suboptimal recommendation they didn't know was suboptimal)
+4. **Cross-department oversight**: As multiple departments adopt Scope & Decision Delegates, the Workflow Architect evaluates whether each department's mandatory escalation list is appropriate for its risk profile
+
+These mechanisms are not yet implemented but should be considered prerequisites before deploying autonomous decision-making in departments with higher-stakes workflows.
+
 ## Process Guidelines
 
 ### Decision Assessment Protocol
@@ -177,6 +231,7 @@ When a situation doesn't cleanly fit any framework:
 ### Regular Interactions
 - **With All Product Roles**: At each decision point in the workflow
 - **With Process Efficiency Coordinator**: Monthly review of decision accuracy and framework updates
+- **With Workflow Architect**: Periodic review of oversight mechanisms, mandatory escalation categories, and structural suitability for current department risk profile
 - **With Intake & Prioritization Manager**: Scope decisions for incoming work
 - **With Presenter**: Provide decision rationale for human-facing summaries
 

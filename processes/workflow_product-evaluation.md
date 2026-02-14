@@ -67,6 +67,13 @@ This workflow enables comprehensive, efficient, and high-quality product evaluat
 
 **Primary Output**: Cross-department request routing, department registry, relationship health reports, translation glossaries
 
+#### 9. Workflow Architect
+**Core Function**: Evaluate the structural integrity of workflows, role architectures, and inter-department systems — identifying missing roles, oversight gaps, failure modes, and risk misalignment
+
+**Expertise**: Structural review, failure mode analysis, risk profiling, oversight mechanism design, cross-department interaction architecture
+
+**Primary Output**: Structural review reports, risk profile assessments, mandatory escalation recommendations, authority/accountability maps, structural improvement roadmaps
+
 ## High-Level Workflow
 
 ```
@@ -420,7 +427,26 @@ Inter-Department Liaison handles all cross-department interactions
 - **With Scope & Decision Delegate**: Decision framework accuracy, calibration data
 - **With Presenter**: Template standards, format alignment with data structures
 - **With Inter-Department Liaison**: Cross-department protocol standards
+- **With Workflow Architect**: Structural findings that translate into process improvements; shared implementation responsibility
 - **With All Departments**: Cross-department process harmonization
+
+### Structural Integrity Review (Workflow Architect)
+
+**Activities**:
+1. Conduct periodic structural reviews of department workflows
+2. Perform failure mode analysis (silent failures, cascade failures, authority gaps, oversight gaps)
+3. Assess and maintain department risk profiles
+4. Review mandatory escalation categories for Scope & Decision Delegates
+5. Evaluate cross-department interaction architectures
+6. Design oversight mechanisms calibrated to department risk levels
+7. Work with Process Efficiency Coordinator to implement structural improvements
+
+**Touchpoints**:
+- **With Process Efficiency Coordinator**: Ongoing partnership — structural findings inform process improvements
+- **With Scope & Decision Delegates**: Set and review mandatory escalation categories and autonomy boundaries
+- **With Inter-Department Liaison**: Evaluate cross-department handoff contracts and interaction patterns
+- **With All Department Roles**: Validate structural findings against operational reality
+- **With Human/Leadership**: Present risk assessments requiring organizational decisions
 
 ### Cross-Department Coordination (Inter-Department Liaison)
 
@@ -837,6 +863,8 @@ The result is informed, confident purchase decisions backed by thorough research
 | Process Improvement | Process Coord. (cross-dept) | All Roles, All Depts | Leadership | All Roles |
 | Cross-Dept Coordination | Inter-Dept Liaison | All Roles, Other Depts | Human (strategic conflicts) | Intake & Prioritization Mgr |
 | Data Format Design | Process Coord. (cross-dept) | All Roles | Human (if impacts experience) | All Roles |
+| Structural Review | Workflow Architect | Process Coord., All Roles | Leadership (org-level decisions) | Process Coord., Scope Delegates |
+| Risk Profiling | Workflow Architect | Scope Delegate, Dept Roles | Leadership (risk policy) | Scope Delegates, All Depts |
 
 ---
 
