@@ -1,0 +1,66 @@
+# =============================================================================
+# KNOWLEDGE ARCHIVE - knowledge/archive.yaml
+# =============================================================================
+# Deprecated and rejected items. This file preserves history for audit,
+# context, and reference. It explains *why* things changed over time.
+#
+# STATUS VALUES:
+#   deprecated - Was a confirmed fact in facts.yaml but is no longer current.
+#                A replacement fact should exist; see the replaced_by field.
+#   rejected   - Was in queue.yaml but determined to be invalid, out of scope,
+#                or not applicable. The reason field explains why.
+#
+# LIFECYCLE:
+#   - This file is append-only. Items here are never deleted.
+#   - Deprecated facts: Move here from facts.yaml when replaced by a new fact.
+#   - Rejected queue items: Move here from queue.yaml when a reviewer decides
+#     the item should not become a fact.
+#
+# SCOPE: Organization-wide. Mirrors the scope of facts.yaml and queue.yaml.
+# =============================================================================
+
+archive:
+
+  # ---------------------------------------------------------------------------
+  # Example: Deprecated fact (replaced by a newer fact)
+  # ---------------------------------------------------------------------------
+  #
+  # When a fact is superseded, move the full original entry here and add
+  # the archive metadata fields (status, reason, replaced_by, archived_date,
+  # archived_by). This preserves the original wording and context.
+  #
+  # Template:
+  #
+  # - path: <original category/name path>
+  #   summary: "<original summary>"
+  #   details: |
+  #     <original details, preserved exactly as they were>
+  #   original_confidence: <confidence level when it was active>
+  #   status: deprecated
+  #   reason: "<why this fact is no longer current>"
+  #   replaced_by: <path of the new fact in facts.yaml, or null>
+  #   archived_date: YYYY-MM-DD
+  #   archived_by: human:<role> or agent:<role>
+
+  # ---------------------------------------------------------------------------
+  # Example: Rejected queue item
+  # ---------------------------------------------------------------------------
+  #
+  # When a queue item is reviewed and determined not to be a valid fact,
+  # move it here with the rejection context.
+  #
+  # Template:
+  #
+  # - id: <original Q-NNN id>
+  #   category: <original category>
+  #   summary: "<original summary>"
+  #   details: |
+  #     <original details, preserved exactly as they were>
+  #   original_added_by: <who originally submitted it>
+  #   status: rejected
+  #   reason: "<why this was rejected - be specific so the context is clear>"
+  #   archived_date: YYYY-MM-DD
+  #   archived_by: human:<role> or agent:<role>
+
+  # No archived items yet. This file will accumulate entries as facts are
+  # deprecated and queue items are reviewed over time.
