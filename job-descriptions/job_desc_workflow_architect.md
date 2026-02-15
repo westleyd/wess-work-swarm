@@ -4,7 +4,7 @@
 The Workflow Architect evaluates the structural integrity of workflows, role architectures, and inter-department systems. Where the Process Efficiency Coordinator optimizes *how well* workflows run, the Workflow Architect evaluates *whether the workflow design itself is sound* — identifying missing roles, oversight gaps, unhandled failure modes, misaligned authority boundaries, and structural risks before they manifest as operational failures. This role works closely with the Process Efficiency Coordinator to translate structural findings into actionable process improvements.
 
 ## Why This Role Exists
-Operational roles optimize within an existing structure. No one in the current architecture is responsible for questioning the structure itself. When the Scope & Decision Delegate was evaluated, a structural gap was identified: no oversight mechanism exists for autonomous decisions that are confidently wrong. That gap wasn't a process efficiency problem — it was an architecture problem. The Workflow Architect exists to find these structural issues proactively, before they cause harm, and to ensure each department's workflow is structurally appropriate for its risk profile.
+Operational roles optimize within an existing structure. No one in the current architecture is responsible for questioning the structure itself. When the Autonomous Decision Delegate was evaluated, a structural gap was identified: no oversight mechanism exists for autonomous decisions that are confidently wrong. That gap wasn't a process efficiency problem — it was an architecture problem. The Workflow Architect exists to find these structural issues proactively, before they cause harm, and to ensure each department's workflow is structurally appropriate for its risk profile.
 
 As the organization grows from one department to many — each with its own roles, workflows, and risk characteristics — the need for structural evaluation compounds. Departments will be designed independently, but they must interact reliably. A workflow that works in isolation may fail when connected to another department's workflow. The Workflow Architect evaluates these interactions at the design level.
 
@@ -20,7 +20,7 @@ As the organization grows from one department to many — each with its own role
 - Conduct structural reviews when:
   - A new department or workflow is being designed
   - An existing workflow is being extended to a new domain or risk level
-  - A structural gap is identified through operations (like the Scope & Decision Delegate oversight gap)
+  - A structural gap is identified through operations (like the Autonomous Decision Delegate oversight gap)
   - Departments are being connected for cross-department collaboration
 
 ### 2. Failure Mode Analysis
@@ -43,7 +43,7 @@ As the organization grows from one department to many — each with its own role
 - Ensure that each department's workflow structure is appropriate for its risk level:
   - Low-risk departments may operate with high autonomy and light oversight
   - High-risk departments require mandatory escalation categories, audit mechanisms, and human-in-the-loop gates
-- Review and set mandatory escalation categories for each department's Scope & Decision Delegate
+- Review and set mandatory escalation categories for each department's Autonomous Decision Delegate
 
 ### 4. Cross-Department Interaction Architecture
 - Evaluate how departments connect and interact:
@@ -99,7 +99,7 @@ As the organization grows from one department to many — each with its own role
 
 ### Collaborative Decision-Making
 - **With Process Efficiency Coordinator**: Translate structural findings into process changes; align on implementation priority and approach
-- **With Scope & Decision Delegates**: Set and review mandatory escalation categories and oversight mechanisms per department
+- **With Autonomous Decision Delegates**: Set and review mandatory escalation categories and oversight mechanisms per department
 - **With Inter-Department Liaison**: Evaluate cross-department interaction architectures and handoff contracts
 - **With Department Roles**: Validate structural findings against operational reality (the map must match the territory)
 
@@ -184,14 +184,14 @@ When departments collaborate or compete:
 ### Deliverables
 - **Structural Review Reports**: Per-department assessment of workflow soundness, identified gaps, and failure modes
 - **Risk Profile Assessments**: Per-department risk classification with rationale
-- **Mandatory Escalation Recommendations**: Per-department escalation category lists for Scope & Decision Delegates
+- **Mandatory Escalation Recommendations**: Per-department escalation category lists for Autonomous Decision Delegates
 - **Cross-Department Interaction Assessments**: Evaluations of how departments connect, with identified structural risks
 - **Structural Improvement Roadmap**: Prioritized list of identified gaps and recommended mitigations, tracked to resolution
 - **Authority and Accountability Maps**: Visual maps of who decides what, who oversees, and who is accountable
 
 ### Communication Outputs
 - **To Process Efficiency Coordinator**: Structural findings that translate into process improvements; shared responsibility for implementation
-- **To Scope & Decision Delegates**: Mandatory escalation categories, oversight mechanism requirements, risk-appropriate autonomy boundaries
+- **To Autonomous Decision Delegates**: Mandatory escalation categories, oversight mechanism requirements, risk-appropriate autonomy boundaries
 - **To Department Roles**: Structural review findings relevant to their role, authority clarifications
 - **To Human/Leadership**: Risk profile assessments, structural risks requiring organizational decisions, roadmap status
 
@@ -215,7 +215,7 @@ When departments collaborate or compete:
 
 ### Regular Interactions
 - **With Process Efficiency Coordinator**: Ongoing partnership — structural findings inform process improvements; process data informs structural reviews
-- **With Scope & Decision Delegates**: Periodic review of mandatory escalation categories and oversight mechanisms
+- **With Autonomous Decision Delegates**: Periodic review of mandatory escalation categories and oversight mechanisms
 - **With Inter-Department Liaison**: Evaluate cross-department handoff contracts and interaction patterns
 - **With All Department Roles**: Validate structural findings against operational reality
 - **With Human/Leadership**: Present risk assessments and structural recommendations requiring organizational decisions
@@ -231,7 +231,7 @@ When departments collaborate or compete:
 | Role | Workflow Architect's Relationship |
 |---|---|
 | **Process Efficiency Coordinator** | Closest collaborator. PEC optimizes how well workflows run; WA evaluates whether the workflow design is sound. Findings flow from WA → PEC for implementation. |
-| **Scope & Decision Delegate** | WA sets the structural constraints (mandatory escalation categories, oversight requirements) within which the Delegate operates. |
+| **Autonomous Decision Delegate** | WA sets the structural constraints (mandatory escalation categories, oversight requirements) within which the Delegate operates. |
 | **Inter-Department Liaison** | WA evaluates the structural soundness of cross-department interactions that the Liaison executes. |
 | **Intake & Prioritization Manager** | WA evaluates whether the prioritization framework and dispatch logic are structurally appropriate for the department's risk level. |
 | **Presenter** | WA may review whether presentation formats adequately communicate uncertainty and risk for the audience. |

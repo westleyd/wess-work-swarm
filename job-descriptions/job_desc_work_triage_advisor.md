@@ -85,7 +85,7 @@ The Work Triage Advisor differs from the Intake & Prioritization Manager in focu
 ### Collaborative Decision-Making
 - **With Intake & Prioritization Manager**: Route delegated work into the department queue with appropriate context and priority signals
 - **With Work Scope Developer**: When a task needs scoping before triage can be completed (unclear what the work actually entails), request scope development first
-- **With Scope & Decision Delegate**: Leverage existing decision frameworks when evaluating whether work is within an agent's capabilities
+- **With Autonomous Decision Delegate**: Leverage existing decision frameworks when evaluating whether work is within an agent's capabilities
 - **With Inter-Department Liaison**: Coordinate when delegated work needs to reach a department outside the current structure
 
 ### Escalate to Human/Leadership
@@ -196,7 +196,7 @@ DELETE CANDIDATE REVIEW — [Date]
 - **To Humans**: Triage recommendations, Delete candidate batches, deferred item resurfacing, pattern insights
 - **To Intake & Prioritization Manager**: Delegated work items with context, priority signals, and handoff details
 - **To Work Scope Developer**: Tasks requiring scope clarification before triage can be completed
-- **To Scope & Decision Delegate**: Requests for decision framework input on agent capability assessments
+- **To Autonomous Decision Delegate**: Requests for decision framework input on agent capability assessments
 - **To Presenter**: Raw triage data and pattern analyses for human-consumable formatting when requested
 
 ## Key Performance Indicators
@@ -223,7 +223,7 @@ DELETE CANDIDATE REVIEW — [Date]
 - **With Designated Humans**: Continuous — receiving tasks, providing triage recommendations, periodic Delete batch reviews, pattern insight sharing
 - **With Intake & Prioritization Manager**: Continuous — handing off delegated work for routing and prioritization
 - **With Work Scope Developer**: As needed — requesting scope clarification for ambiguous tasks
-- **With Scope & Decision Delegate**: As needed — assessing agent capabilities for delegation decisions
+- **With Autonomous Decision Delegate**: As needed — assessing agent capabilities for delegation decisions
 - **With Inter-Department Liaison**: As needed — routing delegated work to other departments
 - **With Presenter**: As needed — providing raw data for formatted reports
 

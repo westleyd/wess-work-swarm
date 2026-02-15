@@ -105,7 +105,7 @@ Without centralized intake and prioritization, work enters the department throug
 ### Collaborative Decision-Making
 - **With All Product Agents**: Workload expectations, estimated effort for complex items
 - **With Inter-Department Liaison**: Priority of cross-department requests relative to internal work
-- **With Scope & Decision Delegate**: Scope clarification for incoming requests before dispatch
+- **With Autonomous Decision Delegate**: Scope clarification for incoming requests before dispatch
 - **With Process Efficiency Coordinator**: Queue health metrics, capacity trends, process bottleneck identification
 
 ### Escalate to Human/Leadership
@@ -169,7 +169,7 @@ Healthy queue indicators:
 ### Communication Outputs
 - **To Agents**: Work assignments, priority updates, dependency notifications
 - **To Inter-Department Liaison**: Status of cross-department requests, capacity constraints affecting SLAs
-- **To Scope & Decision Delegate**: Requests needing scope clarification before dispatch
+- **To Autonomous Decision Delegate**: Requests needing scope clarification before dispatch
 - **To Process Efficiency Coordinator**: Queue health metrics, bottleneck patterns, throughput trends
 - **To Requestors**: Acknowledgment of receipt, expected timeline, status updates
 
@@ -201,7 +201,7 @@ Healthy queue indicators:
 ### Regular Interactions
 - **With All Agents**: Continuous — dispatching work, receiving completion notices, adjusting assignments
 - **With Inter-Department Liaison**: Daily — incoming cross-department requests, status updates
-- **With Scope & Decision Delegate**: As needed — scope clarification for ambiguous requests
+- **With Autonomous Decision Delegate**: As needed — scope clarification for ambiguous requests
 - **With Process Efficiency Coordinator**: Weekly — queue health review, bottleneck identification
 - **With Presenter**: As needed — provide queue status data for human-facing reports
 
@@ -220,7 +220,7 @@ Healthy queue indicators:
 1. Receive request, validate completeness (user specified budget $200-$400, use case: office work)
 2. Classify: Type=New Evaluation, Complexity=Standard, Urgency=Standard, Source=Direct User
 3. Prioritize: Priority 2 (standard user request)
-4. Route to Scope & Decision Delegate for scope confirmation (well-known category, likely autonomous)
+4. Route to Autonomous Decision Delegate for scope confirmation (well-known category, likely autonomous)
 5. Dispatch to Product Data Collector with work package including scope, user preferences, and priority
 6. Track through the full workflow pipeline
 

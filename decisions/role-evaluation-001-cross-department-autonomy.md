@@ -42,7 +42,7 @@ This evaluation documents the collaborative discussion that refined these roles,
 
 **Accepted with this understanding**: The Liaison is not a passive router. It is an active translator and relationship steward with decision authority over routing, format conversion, and minor timeline negotiation.
 
-#### Scope & Decision Delegate
+#### Autonomous Decision Delegate
 
 **Proposed as**: An autonomous decision-maker at workflow gate points, using precedent libraries, decision frameworks, and confidence thresholds to resolve routine decisions without human input.
 
@@ -60,7 +60,7 @@ These mechanisms are insufficient for several failure modes:
 - **Confidence miscalibration**: The Delegate doesn't know what it doesn't know
 - **Domain boundary crossings**: Requests touching safety, legal, or compliance that the Delegate has no framework to recognize
 
-**Resolution**: The Scope & Decision Delegate's job description was updated with:
+**Resolution**: The Autonomous Decision Delegate's job description was updated with:
 - An explicit "Oversight and Structural Limitations" section
 - Documentation that the current scope is safe for common product-evaluation use cases but **not suitable for high-stakes domains** (emergency services, critical hardware, medical devices, legal/compliance-sensitive evaluations)
 - A mandatory escalation categories list that cannot be overridden by confidence level: safety-implicated, legal/regulatory, high-dollar, irreversible, and first-of-kind
@@ -90,11 +90,11 @@ This structural gap directly led to Decision 4 (Workflow Architect role).
 
 ### Decision 4: Workflow Architect Role Added
 
-**Origin**: This role was not in the original request. It emerged from the evaluation discussion when the Scope & Decision Delegate's oversight gap was identified.
+**Origin**: This role was not in the original request. It emerged from the evaluation discussion when the Autonomous Decision Delegate's oversight gap was identified.
 
 **The question that created this role**: "Who oversees if this role missed things that should have gone to someone else (agent with scope, agent executive, safety/legal coordinator, or human executive) for consideration and input?"
 
-**Rationale**: The Process Efficiency Coordinator optimizes *how well* workflows run. No role was responsible for evaluating *whether the workflow design itself is sound*. This is the difference between operational efficiency and structural integrity. The Scope & Decision Delegate oversight gap was a structural problem — a missing feedback loop in the architecture — not a process efficiency problem.
+**Rationale**: The Process Efficiency Coordinator optimizes *how well* workflows run. No role was responsible for evaluating *whether the workflow design itself is sound*. This is the difference between operational efficiency and structural integrity. The Autonomous Decision Delegate oversight gap was a structural problem — a missing feedback loop in the architecture — not a process efficiency problem.
 
 As the organization scales to multiple departments with different risk profiles, structural evaluation becomes critical:
 - A workflow that's structurally sound for consumer product evaluation may be dangerously unsuitable for a department handling safety-critical procurement
@@ -124,7 +124,7 @@ As the organization scales to multiple departments with different risk profiles,
 
 **Department Operations Roles** (enable autonomous operation):
 - Intake & Prioritization Manager — floor manager + forecasting
-- Scope & Decision Delegate — autonomous decision-maker with mandatory escalation constraints
+- Autonomous Decision Delegate — autonomous decision-maker with mandatory escalation constraints
 - Presenter — structured-to-human data translator
 
 **Cross-Department Roles** (enable multi-department collaboration):
@@ -137,7 +137,7 @@ As the organization scales to multiple departments with different risk profiles,
 | Human dependency | Role that addresses it |
 |---|---|
 | Humans broker cross-department requests | Inter-Department Liaison |
-| Humans make routine scope/filtering decisions | Scope & Decision Delegate |
+| Humans make routine scope/filtering decisions | Autonomous Decision Delegate |
 | Humans schedule, assign, and prioritize work | Intake & Prioritization Manager |
 | Humans interpret raw agent output | Presenter |
 | Humans notice when workflow design is flawed | Workflow Architect |
@@ -151,7 +151,7 @@ As the organization scales to multiple departments with different risk profiles,
 | Standard (water distiller) | 3-4 mandatory | 0-2 conditional |
 | Complex (SUV category) | 4+ mandatory | 2-3 conditional + 1 mandatory (final decision) |
 
-The only truly mandatory human decision point is now the final purchase decision. All other human loops are conditional, triggered only when the Scope & Decision Delegate's confidence is insufficient.
+The only truly mandatory human decision point is now the final purchase decision. All other human loops are conditional, triggered only when the Autonomous Decision Delegate's confidence is insufficient.
 
 ---
 
@@ -159,7 +159,7 @@ The only truly mandatory human decision point is now the final purchase decision
 
 | Risk | Mitigation |
 |---|---|
-| Scope & Decision Delegate makes confidently wrong decisions | Mandatory escalation categories (safety, legal, high-dollar, irreversible, first-of-kind); Workflow Architect reviews and adjusts |
+| Autonomous Decision Delegate makes confidently wrong decisions | Mandatory escalation categories (safety, legal, high-dollar, irreversible, first-of-kind); Workflow Architect reviews and adjusts |
 | Inter-Department Liaison becomes a bottleneck | Process Efficiency Coordinator monitors throughput; Liaison can be parallelized if volume demands |
 | Workflow Architect becomes bureaucratic overhead | Role focuses on risk-proportionate review, not universal gatekeeping; low-risk departments get light-touch review |
 | Too many roles create coordination overhead | Intake & Prioritization Manager centralizes coordination; Process Efficiency Coordinator optimizes inter-role communication |
@@ -171,7 +171,7 @@ The only truly mandatory human decision point is now the final purchase decision
 
 1. **Department scaling**: The current architecture is designed for one operational department (Product Evaluation) with cross-department roles ready to serve additional departments. As new departments are added, each will need its own core roles but can share the cross-department roles (Process Efficiency Coordinator, Workflow Architect, and potentially the Inter-Department Liaison pattern).
 
-2. **Risk profile evolution**: The Scope & Decision Delegate's oversight mechanisms should be reviewed by the Workflow Architect before deploying autonomous decision-making in any department with a risk profile above "Low."
+2. **Risk profile evolution**: The Autonomous Decision Delegate's oversight mechanisms should be reviewed by the Workflow Architect before deploying autonomous decision-making in any department with a risk profile above "Low."
 
 3. **Competitive dynamics**: The department owner anticipates departments that occasionally compete for resources or priorities. The Workflow Architect should design priority arbitration frameworks before this becomes an operational issue.
 
@@ -183,7 +183,7 @@ The only truly mandatory human decision point is now the final purchase decision
 
 All decisions documented here are reflected in the repository:
 - Updated: `job-descriptions/job_desc_process_efficiency_coordinator.md` (cross-department)
-- Updated: `job-descriptions/job_desc_scope_and_decision_delegate.md` (oversight section added)
+- Updated: `job-descriptions/job_desc_autonomous_decision_delegate.md` (oversight section added)
 - Created: `job-descriptions/job_desc_inter_department_liaison.md`
 - Created: `job-descriptions/job_desc_intake_and_prioritization_manager.md`
 - Created: `job-descriptions/job_desc_presenter.md`

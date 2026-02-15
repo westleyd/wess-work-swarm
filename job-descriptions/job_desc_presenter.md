@@ -104,7 +104,7 @@ Agent departments produce outputs optimized for machine processing — structure
 
 ### Collaborative Decision-Making
 - **With Source Agent**: Clarify data meaning, flag potential misinterpretation, verify that the presentation accurately represents the underlying data
-- **With Scope & Decision Delegate**: Understand what decision the human will be making to optimize the format
+- **With Autonomous Decision Delegate**: Understand what decision the human will be making to optimize the format
 - **With Process Efficiency Coordinator**: Align presentation formats with department data standards
 - **With Inter-Department Liaison**: Adapt formats for cross-department audiences
 
@@ -182,7 +182,7 @@ Agent departments produce outputs optimized for machine processing — structure
 
 ### Regular Interactions
 - **With All Product Agents**: Receive structured outputs for transformation
-- **With Scope & Decision Delegate**: Understand upcoming decisions to prepare appropriate formats
+- **With Autonomous Decision Delegate**: Understand upcoming decisions to prepare appropriate formats
 - **With Inter-Department Liaison**: Receive cross-department format requirements and terminology guidance
 - **With Process Efficiency Coordinator**: Align on data format standards, provide feedback on agent output structures that are difficult to present
 

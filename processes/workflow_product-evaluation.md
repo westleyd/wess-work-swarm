@@ -37,7 +37,7 @@ This workflow enables comprehensive, efficient, and high-quality product evaluat
 
 **Primary Output**: Prioritized work queue, dispatched work packages, capacity forecasts
 
-#### 5. Scope & Decision Delegate
+#### 5. Autonomous Decision Delegate
 **Core Function**: Make routine decisions autonomously at workflow decision points, escalating only when genuinely needed
 
 **Expertise**: Decision frameworks, precedent matching, confidence calibration, user preference learning
@@ -83,19 +83,19 @@ Inter-Department Liaison ← (if cross-department origin)
      ↓
 Intake & Prioritization Manager → [Triaged, Prioritized, Dispatched]
      ↓
-Scope & Decision Delegate → [Scope Resolved]
+Autonomous Decision Delegate → [Scope Resolved]
      |                           ↓ (if low confidence)
      |                      Human Feedback Loop
      ↓
 Product Data Collector → [Product Data Matrix]
      ↓
-Scope & Decision Delegate → [Options Filtered]
+Autonomous Decision Delegate → [Options Filtered]
      |                           ↓ (if needed)
      |                      Human Feedback Loop
      ↓
 Product Quality Evaluator → [Quality Evaluation Report]
      ↓
-Scope & Decision Delegate → [Quality-Based Filtering]
+Autonomous Decision Delegate → [Quality-Based Filtering]
      |                           ↓ (if needed)
      |                      Human Feedback Loop
      ↓
@@ -139,10 +139,10 @@ Inter-Department Liaison handles all cross-department interactions
 
 ### Stage 1: Scope Definition and Resolution
 
-**Primary Roles**: Scope & Decision Delegate, Product Data Collector
+**Primary Roles**: Autonomous Decision Delegate, Product Data Collector
 
 **Activities**:
-1. Scope & Decision Delegate evaluates the request:
+1. Autonomous Decision Delegate evaluates the request:
    - Checks precedent library for similar requests
    - Applies scope decision framework for the product category
    - Assesses confidence level
@@ -157,7 +157,7 @@ Inter-Department Liaison handles all cross-department interactions
 - Contradictory requirements
 - User has explicitly requested involvement in scope definition
 
-**Human Loop**: Only when Scope & Decision Delegate determines human input is genuinely needed
+**Human Loop**: Only when Autonomous Decision Delegate determines human input is genuinely needed
 
 **Process Coordinator Role**:
 - Provides standardized scope definition templates
@@ -186,7 +186,7 @@ Inter-Department Liaison handles all cross-department interactions
 
 **Decision Points**:
 - **Proceed**: Standard product with clear specifications available
-- **Escalate to User** (via Scope & Decision Delegate): Critical feature availability unclear
+- **Escalate to User** (via Autonomous Decision Delegate): Critical feature availability unclear
 - **Request from Quality Evaluator**: Clarification on which attributes are most important
 - **Consult Process Coordinator**: Data structure doesn't fit product type well
 
@@ -209,10 +209,10 @@ Inter-Department Liaison handles all cross-department interactions
 
 ### Stage 3: Option Review and Scope Refinement
 
-**Primary Roles**: Scope & Decision Delegate (with user input if needed)
+**Primary Roles**: Autonomous Decision Delegate (with user input if needed)
 
 **Activities**:
-1. Scope & Decision Delegate reviews collected options against scope criteria
+1. Autonomous Decision Delegate reviews collected options against scope criteria
 2. Applies decision framework:
    - Too many options? → Apply filtering criteria to narrow
    - Too few options? → Flag for scope expansion
@@ -226,7 +226,7 @@ Inter-Department Liaison handles all cross-department interactions
 - **Expand scope**: Request Data Collector to research additional variants
 - **Single option found**: May skip Quality Evaluation and proceed to Purchase Advisor
 
-**Human Loop**: Only when Scope & Decision Delegate's confidence is insufficient
+**Human Loop**: Only when Autonomous Decision Delegate's confidence is insufficient
 
 **Output**: Confirmed product list for quality evaluation
 
@@ -259,7 +259,7 @@ Inter-Department Liaison handles all cross-department interactions
 **Decision Points**:
 - **Proceed**: Sufficient data available for evaluation
 - **Request from Data Collector**: Need additional specifications
-- **Escalate to User** (via Scope & Decision Delegate):
+- **Escalate to User** (via Autonomous Decision Delegate):
   - Use case priorities unclear
   - Trade-offs require user preference input
   - Compatibility requirements discovered
@@ -278,10 +278,10 @@ Inter-Department Liaison handles all cross-department interactions
 
 ### Stage 5: Quality-Based Filtering
 
-**Primary Roles**: Scope & Decision Delegate (with user input if needed)
+**Primary Roles**: Autonomous Decision Delegate (with user input if needed)
 
 **Activities**:
-1. Scope & Decision Delegate reviews quality evaluation results
+1. Autonomous Decision Delegate reviews quality evaluation results
 2. Applies quality filtering framework:
    - Eliminate products below quality threshold
    - Select top 2-5 options for purchase evaluation
@@ -296,7 +296,7 @@ Inter-Department Liaison handles all cross-department interactions
 - **No acceptable options**: Return to Data Collection with revised scope
 - **Quality concerns on all options**: Escalate with options
 
-**Human Loop**: Only when the Scope & Decision Delegate determines human judgment is genuinely needed (e.g., significant trade-offs between quality and price with no clear user preference signal)
+**Human Loop**: Only when the Autonomous Decision Delegate determines human judgment is genuinely needed (e.g., significant trade-offs between quality and price with no clear user preference signal)
 
 **Output**: Filtered product list for purchase evaluation with preferences on timing, budget, urgency
 
@@ -321,7 +321,7 @@ Inter-Department Liaison handles all cross-department interactions
 **Decision Points**:
 - **Proceed**: Clear best purchase path identified
 - **Request from Quality Evaluator**: How quality differences justify price premiums
-- **Escalate to User** (via Scope & Decision Delegate):
+- **Escalate to User** (via Autonomous Decision Delegate):
   - Time vs. savings requires user priority input
   - Multiple purchase paths with different trade-offs
   - Merchant reliability concerns
@@ -382,7 +382,7 @@ Inter-Department Liaison handles all cross-department interactions
   - Product satisfaction
   - Purchase experience
   - Presentation format usefulness
-- Feedback is captured by the Scope & Decision Delegate as precedent and by the Process Efficiency Coordinator for improvement
+- Feedback is captured by the Autonomous Decision Delegate as precedent and by the Process Efficiency Coordinator for improvement
 
 **Output**: User makes informed purchase decision
 
@@ -424,7 +424,7 @@ Inter-Department Liaison handles all cross-department interactions
 - **With Quality Evaluator**: Evaluation frameworks, confidence indicators, output templates
 - **With Purchase Advisor**: Pricing data structures, merchant rating systems
 - **With Intake & Prioritization Manager**: Queue health, bottleneck patterns
-- **With Scope & Decision Delegate**: Decision framework accuracy, calibration data
+- **With Autonomous Decision Delegate**: Decision framework accuracy, calibration data
 - **With Presenter**: Template standards, format alignment with data structures
 - **With Inter-Department Liaison**: Cross-department protocol standards
 - **With Workflow Architect**: Structural findings that translate into process improvements; shared implementation responsibility
@@ -436,14 +436,14 @@ Inter-Department Liaison handles all cross-department interactions
 1. Conduct periodic structural reviews of department workflows
 2. Perform failure mode analysis (silent failures, cascade failures, authority gaps, oversight gaps)
 3. Assess and maintain department risk profiles
-4. Review mandatory escalation categories for Scope & Decision Delegates
+4. Review mandatory escalation categories for Autonomous Decision Delegates
 5. Evaluate cross-department interaction architectures
 6. Design oversight mechanisms calibrated to department risk levels
 7. Work with Process Efficiency Coordinator to implement structural improvements
 
 **Touchpoints**:
 - **With Process Efficiency Coordinator**: Ongoing partnership — structural findings inform process improvements
-- **With Scope & Decision Delegates**: Set and review mandatory escalation categories and autonomy boundaries
+- **With Autonomous Decision Delegates**: Set and review mandatory escalation categories and autonomy boundaries
 - **With Inter-Department Liaison**: Evaluate cross-department handoff contracts and interaction patterns
 - **With All Department Roles**: Validate structural findings against operational reality
 - **With Human/Leadership**: Present risk assessments requiring organizational decisions
@@ -481,13 +481,13 @@ Inter-Department Liaison handles all cross-department interactions
                                 ↓
 Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
                           ↑                                    ↑
-              Scope & Decision Delegate            Scope & Decision Delegate
+              Autonomous Decision Delegate            Autonomous Decision Delegate
            (autonomous decisions at each gate)
 ```
 
 ### Escalation Pathways
 
-**To User** (always via Scope & Decision Delegate or Presenter):
+**To User** (always via Autonomous Decision Delegate or Presenter):
 - Genuinely ambiguous requirements that cannot be resolved from context or precedent
 - High-stakes decisions exceeding autonomous authority thresholds
 - Trade-offs requiring explicit user priority input
@@ -499,7 +499,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 
 **To Operations Roles**:
 - **To Intake & Prioritization Manager**: Capacity concerns, work completion, new internal tasks
-- **To Scope & Decision Delegate**: Decisions at any gate point, scope clarifications
+- **To Autonomous Decision Delegate**: Decisions at any gate point, scope clarifications
 - **To Presenter**: Structured outputs ready for human formatting
 - **To Inter-Department Liaison**: Cross-department needs, external dependency issues
 
@@ -511,8 +511,8 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 
 **When to Kick Back** (vs. escalate to user):
 - **Kick Back to Previous Role**: Missing information that previous role should provide
-- **Route to Scope & Decision Delegate**: Decision that may be resolvable from frameworks/precedent before escalating to user
-- **Escalate to User** (via Scope & Decision Delegate): Information or decision only user can provide
+- **Route to Autonomous Decision Delegate**: Decision that may be resolvable from frameworks/precedent before escalating to user
+- **Escalate to User** (via Autonomous Decision Delegate): Information or decision only user can provide
 
 ---
 
@@ -578,9 +578,9 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
    - Purpose: User makes actual purchase decision
    - *This is the only truly mandatory human decision point*
 
-### Conditional Human Loops (via Scope & Decision Delegate)
+### Conditional Human Loops (via Autonomous Decision Delegate)
 
-2. **Scope Clarification** (if Scope & Decision Delegate confidence is low)
+2. **Scope Clarification** (if Autonomous Decision Delegate confidence is low)
    - Triggered by: Ambiguous request that cannot be resolved from context or precedent
    - Purpose: Define clear product evaluation scope
 
@@ -610,7 +610,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 
 **Streamlined Process**:
 1. Intake: Immediate dispatch (low complexity)
-2. Scope: Autonomous resolution by Scope & Decision Delegate (strong precedent)
+2. Scope: Autonomous resolution by Autonomous Decision Delegate (strong precedent)
 3. Data Collection: Basic specs, handful of options
 4. Quality Evaluation: Quick review analysis, material comparison
 5. Purchase Optimization: Price check, best retailer
@@ -618,7 +618,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 7. **Zero human loops expected** (unless user explicitly requests involvement)
 
 **Characteristics**:
-- Scope & Decision Delegate handles all gates autonomously
+- Autonomous Decision Delegate handles all gates autonomously
 - Presenter produces a Recommendation Brief
 - Minimal queue time
 
@@ -686,7 +686,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 - Workload balance across agents
 - Priority accuracy
 
-**Scope & Decision Delegate**:
+**Autonomous Decision Delegate**:
 - Autonomous decision rate
 - Decision accuracy (user override rate)
 - Escalation appropriateness
@@ -745,7 +745,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 **Quality Evaluation Process**: Owned by Quality Evaluator, optimized by Process Coordinator
 **Purchase Optimization Process**: Owned by Purchase Advisor, optimized by Process Coordinator
 **Intake & Queue Management**: Owned by Intake & Prioritization Manager
-**Decision Frameworks**: Owned by Scope & Decision Delegate, calibrated with Process Coordinator
+**Decision Frameworks**: Owned by Autonomous Decision Delegate, calibrated with Process Coordinator
 **Presentation Formats**: Owned by Presenter, aligned with Process Coordinator standards
 **Cross-Role Communication**: Owned by Process Coordinator (cross-department)
 **Cross-Department Communication**: Owned by Inter-Department Liaison, standardized by Process Coordinator
@@ -792,7 +792,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 - AI-assisted review analysis and summarization
 - Price tracking and alert systems
 - Automated format validation
-- Scope & Decision Delegate learning from user override patterns
+- Autonomous Decision Delegate learning from user override patterns
 
 **Expanded Capabilities**:
 - Support for evaluating product bundles
@@ -813,7 +813,7 @@ Data Collector → Quality Evaluator → Purchase Advisor → Presenter → User
 - Intake & Prioritization Manager enables queueing and load balancing
 - Templated workflows for common product types
 - Specialization within roles (e.g., electronics specialist Data Collector)
-- Automated first-pass filtering via Scope & Decision Delegate frameworks
+- Automated first-pass filtering via Autonomous Decision Delegate frameworks
 - Priority queuing for urgent requests
 
 **As Complexity Increases**:
@@ -837,7 +837,7 @@ This workflow system achieves comprehensive product evaluation through:
 
 1. **Specialization**: Each role focuses on what they do best
 2. **Collaboration**: Clear handoffs and communication pathways
-3. **Autonomy**: Scope & Decision Delegate reduces mandatory human loops; Intake & Prioritization Manager self-manages the queue
+3. **Autonomy**: Autonomous Decision Delegate reduces mandatory human loops; Intake & Prioritization Manager self-manages the queue
 4. **Cross-Department Readiness**: Inter-Department Liaison and cross-department Process Efficiency Coordinator enable seamless collaboration with other departments
 5. **Human-Optimized Output**: Presenter transforms agent data into decision-ready formats
 6. **Quality Focus**: Checks and balances at every stage
@@ -852,12 +852,12 @@ The result is informed, confident purchase decisions backed by thorough research
 | Scenario | Primary Role | May Consult | Escalates To | Output Goes To |
 |----------|--------------|-------------|--------------|----------------|
 | Work Intake | Intake & Prioritization Mgr | Inter-Dept Liaison | Human (capacity crises) | Appropriate Agent |
-| Scope Definition | Scope & Decision Delegate | Data Collector, Precedent Library | Human (low confidence) | Data Collector |
-| Data Collection | Data Collector | Quality Eval., Process Coord. | Scope & Decision Delegate | Quality Evaluator |
-| Option Filtering | Scope & Decision Delegate | Data Collector | Human (low confidence) | Quality Evaluator |
-| Quality Assessment | Quality Evaluator | Data Collector, Process Coord. | Scope & Decision Delegate | Purchase Advisor |
-| Quality Filtering | Scope & Decision Delegate | Quality Evaluator | Human (low confidence) | Purchase Advisor |
-| Purchase Optimization | Purchase Advisor | Quality Eval., Process Coord. | Scope & Decision Delegate | Presenter |
+| Scope Definition | Autonomous Decision Delegate | Data Collector, Precedent Library | Human (low confidence) | Data Collector |
+| Data Collection | Data Collector | Quality Eval., Process Coord. | Autonomous Decision Delegate | Quality Evaluator |
+| Option Filtering | Autonomous Decision Delegate | Data Collector | Human (low confidence) | Quality Evaluator |
+| Quality Assessment | Quality Evaluator | Data Collector, Process Coord. | Autonomous Decision Delegate | Purchase Advisor |
+| Quality Filtering | Autonomous Decision Delegate | Quality Evaluator | Human (low confidence) | Purchase Advisor |
+| Purchase Optimization | Purchase Advisor | Quality Eval., Process Coord. | Autonomous Decision Delegate | Presenter |
 | Presentation | Presenter | Source Agents, Scope Delegate | Human (contradictory data) | User |
 | Final Decision | User | Any role | N/A | Purchase execution |
 | Process Improvement | Process Coord. (cross-dept) | All Roles, All Depts | Leadership | All Roles |

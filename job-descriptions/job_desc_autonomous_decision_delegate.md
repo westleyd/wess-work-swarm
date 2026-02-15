@@ -1,12 +1,12 @@
-# Job Description: Scope & Decision Delegate
+# Job Description: Autonomous Decision Delegate
 
 **Department**: Work Intake
 
 ## Role Overview
-The Scope & Decision Delegate makes routine decisions at points in the workflow that currently require human intervention. By applying predefined criteria, confidence thresholds, historical precedent, and decision frameworks, this role autonomously resolves the majority of scope clarifications, quality-based filtering decisions, and mid-process judgment calls — escalating to humans only when the decision is genuinely ambiguous, high-stakes, or unprecedented. This directly reduces mandatory human loops and enables the department to operate more autonomously.
+The Autonomous Decision Delegate makes routine decisions at points in the workflow that currently require human intervention. By applying predefined criteria, confidence thresholds, historical precedent, and decision frameworks, this role autonomously resolves the majority of scope clarifications, quality-based filtering decisions, and mid-process judgment calls — escalating to humans only when the decision is genuinely ambiguous, high-stakes, or unprecedented. This directly reduces mandatory human loops and enables the department to operate more autonomously.
 
 ## Why This Role Exists
-The current workflow has several mandatory human decision points: scope clarification, option review, quality-based filtering, and final purchase decisions. Many of these decisions follow repeatable patterns that don't require human judgment. A user who says "I want a good water distiller under $300" doesn't need to be asked clarifying questions if the department has handled water distiller evaluations before and has clear criteria for "good" and "under $300." The Scope & Decision Delegate captures these patterns, applies them, and reserves human attention for genuinely novel or high-stakes decisions.
+The current workflow has several mandatory human decision points: scope clarification, option review, quality-based filtering, and final purchase decisions. Many of these decisions follow repeatable patterns that don't require human judgment. A user who says "I want a good water distiller under $300" doesn't need to be asked clarifying questions if the department has handled water distiller evaluations before and has clear criteria for "good" and "under $300." The Autonomous Decision Delegate captures these patterns, applies them, and reserves human attention for genuinely novel or high-stakes decisions.
 
 ## Primary Responsibilities
 
@@ -137,7 +137,7 @@ The following are documented for evaluation as the organization scales:
 1. **Audit sampling**: A dedicated reviewer (or the Workflow Architect) samples a percentage of autonomous decisions for correctness — not every decision, but enough to catch systematic drift
 2. **Peer review gates**: Another agent spot-checks the Delegate's reasoning before the decision takes effect, particularly for medium-confidence decisions
 3. **Outcome tracking**: Systematic post-decision outcome tracking to detect patterns of poor decisions that aren't caught by user overrides (because the user accepted a suboptimal recommendation they didn't know was suboptimal)
-4. **Cross-department oversight**: As multiple departments adopt Scope & Decision Delegates, the Workflow Architect evaluates whether each department's mandatory escalation list is appropriate for its risk profile
+4. **Cross-department oversight**: As multiple departments adopt Autonomous Decision Delegates, the Workflow Architect evaluates whether each department's mandatory escalation list is appropriate for its risk profile
 
 These mechanisms are not yet implemented but should be considered prerequisites before deploying autonomous decision-making in departments with higher-stakes workflows.
 
@@ -290,4 +290,4 @@ When a situation doesn't cleanly fit any framework:
 
 ---
 
-**This role is the autonomy engine of the department. By systematically learning which decisions can be made automatically and which genuinely need human judgment, the Scope & Decision Delegate progressively reduces the human input required to operate the department while maintaining decision quality.**
+**This role is the autonomy engine of the department. By systematically learning which decisions can be made automatically and which genuinely need human judgment, the Autonomous Decision Delegate progressively reduces the human input required to operate the department while maintaining decision quality.**

@@ -45,7 +45,7 @@ Without a dedicated intake function, work enters the organization through ad-hoc
 | Role | Primary Function | Notes |
 |---|---|---|
 | **Intake & Prioritization Manager** | Manages the department's work queue — triages, prioritizes, and dispatches work to appropriate agents | System-facing; owns the queue and routing logic |
-| **Scope & Decision Delegate** | Makes routine scope and filtering decisions autonomously, escalating only when genuinely ambiguous or high-stakes | Reduces mandatory human decision points |
+| **Autonomous Decision Delegate** | Makes routine scope and filtering decisions autonomously, escalating only when genuinely ambiguous or high-stakes | Reduces mandatory human decision points |
 | **Work Triage Advisor** | Helps humans evaluate their personal tasks using a Delegate/Delete/Defer model | Human-facing; serves individual humans |
 | **Work Scope Developer** | Develops brief task descriptions into structured plans with identified roles and dependencies | Scoping function; transforms vague inputs into actionable plans |
 
@@ -92,7 +92,7 @@ Request Received
 - **Work Triage Advisor → Intake & Prioritization Manager**: Delegated work items flow from triage to the queue for routing
 - **Work Triage Advisor → Work Scope Developer**: Ambiguous tasks are sent for scope clarification before triage can complete
 - **Work Scope Developer → Intake & Prioritization Manager**: Finalized plans are handed off for execution routing
-- **Scope & Decision Delegate → Intake & Prioritization Manager**: Scope decisions inform dispatch decisions
+- **Autonomous Decision Delegate → Intake & Prioritization Manager**: Scope decisions inform dispatch decisions
 - **Inter-Department Liaison → Intake & Prioritization Manager**: Cross-department requests enter the queue through the Liaison
 - **Inter-Department Liaison → Work Scope Developer**: Cross-department work may need scoping before it can be routed
 

@@ -90,7 +90,7 @@ Work enters the organization in many forms — from one-line requests to multi-p
 ### Collaborative Decision-Making
 - **With Intake & Prioritization Manager**: Coordinate plan handoff for execution; confirm that the plan's priority and resource assumptions are realistic
 - **With Work Triage Advisor**: Receive tasks that need scope clarification before triage can be completed
-- **With Scope & Decision Delegate**: Leverage existing decision frameworks and precedent libraries to inform scope decisions
+- **With Autonomous Decision Delegate**: Leverage existing decision frameworks and precedent libraries to inform scope decisions
 - **With Inter-Department Liaison**: Identify cross-department dependencies in plans and confirm that required inter-department capabilities exist
 - **With Workflow Architect**: Consult when a plan's structural requirements suggest new workflows or organizational changes
 
@@ -278,7 +278,7 @@ Assumptions I could make (if you'd prefer I proceed):
 ### Regular Interactions
 - **With Intake & Prioritization Manager**: Continuous — handing off finalized plans for execution, receiving feedback on plan executability
 - **With Work Triage Advisor**: As needed — receiving tasks that need scope clarification before triage
-- **With Scope & Decision Delegate**: As needed — leveraging decision frameworks and precedent libraries during planning
+- **With Autonomous Decision Delegate**: As needed — leveraging decision frameworks and precedent libraries during planning
 - **With Inter-Department Liaison**: As needed — validating cross-department dependencies and capabilities
 - **With Workflow Architect**: Periodic — sharing structural observations from planning work, consulting on plans that suggest organizational changes
 - **With Presenter**: As needed — providing plan data for formatted presentation to humans
