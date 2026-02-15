@@ -1,0 +1,158 @@
+# =============================================================================
+# CONFIRMED FACTS - knowledge/facts.yaml
+# =============================================================================
+# Verified knowledge that agents can rely on when making decisions.
+# Both agents and humans reference this file as a source of truth.
+#
+# REFERENCING: Use category paths to cite facts (e.g., legal/jurisdiction).
+#   Categories: legal, organizational, domain, agent-behavior
+#
+# CONFIDENCE LEVELS:
+#   fact          - Verified and authoritative. Agents treat as ground truth.
+#   best-practice - Established convention. Follow unless explicitly overridden.
+#   suggestion    - Recommended but flexible. Agents may adapt to context.
+#   unknown       - Included for awareness but unverified. Agents must flag
+#                   when relying on this and should escalate if decision-critical.
+#
+# LIFECYCLE:
+#   Facts are immutable once confirmed. To correct or update a fact:
+#   1. Move the old entry to archive.yaml with status: deprecated
+#   2. Create a new entry here with a replaces field pointing to the old path
+#   Never edit a confirmed fact in place - always deprecate and replace.
+#
+# SCOPE: Organization-wide. These facts apply across all repos and swarms
+#   operating under GreenWest LLC unless a repo-specific override exists.
+# =============================================================================
+
+facts:
+
+  # ---------------------------------------------------------------------------
+  # LEGAL / REGULATORY
+  # ---------------------------------------------------------------------------
+
+  - path: legal/jurisdiction
+    summary: "GreenWest LLC operates under Missouri and US law"
+    details: |
+      GreenWest LLC is a company established in the state of Missouri, USA.
+      When evaluating legal feasibility, compliance, regulatory questions, or
+      consumer protection matters, apply Missouri state law and US federal law
+      as the default legal framework unless a specific situation calls for
+      another jurisdiction (e.g., a product sold exclusively in the EU).
+    confidence: fact
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Company formation documents"
+    replaces: null
+
+  - path: legal/consumer-protection-baseline
+    summary: "Missouri and federal consumer protection laws are the baseline"
+    details: |
+      Product evaluations should consider Missouri's Merchandising Practices
+      Act (Chapter 407 RSMo) and federal consumer protection regulations
+      (FTC Act, CPSC standards) when assessing vendor practices, warranty
+      claims, and return policies. Agents evaluating merchants should flag
+      any practices that may conflict with these protections.
+    confidence: best-practice
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Derived from legal/jurisdiction"
+    replaces: null
+
+  # ---------------------------------------------------------------------------
+  # ORGANIZATIONAL
+  # ---------------------------------------------------------------------------
+
+  - path: organizational/identity
+    summary: "GreenWest LLC is the parent organization"
+    details: |
+      The organization operating this agent swarm is GreenWest LLC.
+      All agents work on behalf of GreenWest LLC interests. Decisions
+      should align with the organization's goals and values.
+    confidence: fact
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Organization setup"
+    replaces: null
+
+  - path: organizational/transparency-preference
+    summary: "Prefer transparency over assumption in all agent outputs"
+    details: |
+      When agents produce reports or recommendations, they should clearly
+      state what they know, what they assumed, and what gaps remain.
+      Stakeholders prefer honest uncertainty over false confidence.
+    confidence: best-practice
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Organizational values"
+    replaces: null
+
+  # ---------------------------------------------------------------------------
+  # DOMAIN / WORKFLOW
+  # ---------------------------------------------------------------------------
+
+  - path: domain/data-source-priority
+    summary: "Manufacturer specs are the highest-priority data source"
+    details: |
+      When collecting product data, prioritize sources in this order:
+        1. Manufacturer official specifications and datasheets
+        2. Major retailers (Amazon, Home Depot, B&H Photo, etc.)
+        3. Aggregator sites and specification databases
+        4. Avoid: user forums, social media, non-authoritative sources
+      This hierarchy applies unless a specific evaluation context justifies
+      deviation (e.g., niche products where manufacturer data is sparse).
+    confidence: best-practice
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "job-descriptions/job_desc_product_data_collector.md"
+    replaces: null
+
+  - path: domain/merchant-reliability-tiers
+    summary: "Merchants are classified into reliability tiers for purchase advice"
+    details: |
+      Tier 1 (Highly Reliable): Major retailers, manufacturer direct stores,
+        established specialty retailers with strong return policies.
+      Tier 2 (Reliable with Caveats): High-rated marketplace sellers
+        (>95% positive, >1000 reviews), regional chains, authorized dealers.
+      Tier 3 (Higher Risk): Limited-history sellers, international sellers,
+        liquidators, gray market sources.
+      Avoid: Poor-rated sellers, suspiciously low prices, non-authorized
+        sellers for warranty-sensitive products, no-return-policy sellers.
+    confidence: best-practice
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "job-descriptions/job_desc_product_purchase_advisor.md"
+    replaces: null
+
+  # ---------------------------------------------------------------------------
+  # AGENT BEHAVIOR
+  # ---------------------------------------------------------------------------
+
+  - path: agent-behavior/no-inference-rule
+    summary: "Agents flag uncertainty rather than infer"
+    details: |
+      When an agent encounters incomplete or ambiguous information, it must
+      flag the gap rather than making assumptions or inferences. This applies
+      to all roles. If a confirmed fact in this file (facts.yaml) covers the
+      question, the agent may act on it without escalating. Otherwise, the
+      agent should escalate to the appropriate party or add an entry to
+      queue.yaml if the question is not blocking immediate work.
+    confidence: fact
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Agent role definitions (all job descriptions)"
+    replaces: null
+
+  - path: agent-behavior/queue-contribution
+    summary: "Agents may add items to the knowledge queue"
+    details: |
+      When an agent identifies a knowledge gap, recurring assumption, or
+      pattern that would benefit from a confirmed fact, it should add an
+      entry to queue.yaml with added_by set to agent:<role_name>. The agent
+      should continue its current task using escalation protocols for the
+      immediate need, while the queue entry captures the broader knowledge
+      gap for future resolution.
+    confidence: fact
+    confirmed_by: human:owner
+    confirmed_date: 2026-02-15
+    source: "Knowledge management system design"
+    replaces: null

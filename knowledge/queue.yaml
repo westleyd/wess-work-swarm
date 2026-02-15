@@ -1,0 +1,94 @@
+# =============================================================================
+# KNOWLEDGE QUEUE - knowledge/queue.yaml
+# =============================================================================
+# Items pending human review. Both agents and humans can add entries here.
+#
+# ADDING ITEMS:
+#   - Set added_by to identify the source:
+#       human:<role>   (e.g., human:owner, human:developer)
+#       agent:<role>   (e.g., agent:product_data_collector, agent:purchase_advisor)
+#   - Assign a unique ID in the format Q-NNN (increment from the last entry)
+#   - Set the category to one of: legal, organizational, domain, agent-behavior
+#   - Include enough context for a reviewer to understand and decide
+#
+# PRIORITY LEVELS:
+#   high   - Should be reviewed soon; may affect quality of active work
+#   medium - Important but not blocking current tasks
+#   low    - Nice to know; review when convenient
+#
+# BLOCKING:
+#   When true, an agent has paused or degraded its work because this item
+#   is unresolved. Reviewers should prioritize blocking items first.
+#
+# AFTER REVIEW:
+#   - If confirmed: Create a new entry in facts.yaml, then delete from here
+#   - If rejected: Move to archive.yaml with status: rejected and a reason
+#   - If needs refinement: Update the entry here with reviewer notes
+#
+# SCOPE: Organization-wide. Items may relate to any repo or swarm.
+# =============================================================================
+
+queue:
+
+  # ---------------------------------------------------------------------------
+  # Example: Agent-submitted item (medium priority, not blocking)
+  # ---------------------------------------------------------------------------
+
+  - id: Q-001
+    category: organizational
+    summary: "What is the typical budget range for product evaluations?"
+    details: |
+      When evaluating products, agents need to know if there is a general
+      budget range or spending threshold to filter options. Without this,
+      all price points are considered equally, which may waste evaluation
+      effort on products outside the buyer's range. Should there be a
+      default budget assumption, or should budget always be specified
+      per-evaluation?
+    added_by: agent:product_purchase_advisor
+    added_date: 2026-02-15
+    priority: medium
+    blocking: false
+    context: >
+      Encountered during product evaluations where options ranged widely
+      in price. Without budget guidance, the full range must be evaluated.
+
+  # ---------------------------------------------------------------------------
+  # Example: Human-submitted item (low priority, not blocking)
+  # ---------------------------------------------------------------------------
+
+  - id: Q-002
+    category: legal
+    summary: "Are there additional consumer protection policies beyond Missouri defaults?"
+    details: |
+      Missouri has standard consumer protection laws, but GreenWest LLC
+      may want to adopt stricter internal standards for vendor vetting,
+      minimum warranty requirements, or return window expectations that
+      go beyond legal minimums. If such policies exist or should be
+      established, they would become confirmed facts for agent reference.
+    added_by: human:owner
+    added_date: 2026-02-15
+    priority: low
+    blocking: false
+    context: >
+      General knowledge gap identified during initial knowledge base setup.
+
+  # ---------------------------------------------------------------------------
+  # Example: Blocking item (high priority)
+  # ---------------------------------------------------------------------------
+
+  - id: Q-003
+    category: domain
+    summary: "Should product evaluations include used/refurbished options?"
+    details: |
+      The current workflow and job descriptions focus on new products.
+      It is unclear whether used, refurbished, or open-box items should
+      be included in evaluations. This affects data collection scope,
+      merchant tier classification, and warranty analysis. A confirmed
+      policy would prevent repeated escalations on this question.
+    added_by: agent:product_data_collector
+    added_date: 2026-02-15
+    priority: high
+    blocking: false
+    context: >
+      Multiple evaluations have required clarification on whether to
+      include non-new condition products. Currently escalated per-task.
