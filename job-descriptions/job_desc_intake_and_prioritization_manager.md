@@ -1,5 +1,7 @@
 # Job Description: Intake & Prioritization Manager
 
+**Department**: Work Intake
+
 ## Role Overview
 The Intake & Prioritization Manager receives all work entering the department — from direct user requests, cross-department needs, and internally generated tasks — then triages, prioritizes, and dispatches it to the appropriate agents. This role manages the department's work queue, balances workload across agents, handles dependencies, and ensures work flows smoothly without requiring a human to schedule, assign, or reprioritize. It is the operational backbone that allows the department to self-manage its capacity.
 

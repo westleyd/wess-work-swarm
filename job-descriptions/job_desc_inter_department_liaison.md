@@ -1,5 +1,7 @@
 # Job Description: Inter-Department Liaison
 
+**Department**: Work Intake (organizational home; functionally operates across all departments)
+
 ## Role Overview
 The Inter-Department Liaison manages the interface between this department and all other agent departments. This role translates domain-specific needs into cross-department requests, negotiates priorities and timelines, routes incoming work, and ensures that information flows accurately across department boundaries — all without requiring a human to mediate. The Liaison is the department's external-facing representative, responsible for making cross-department collaboration self-service and friction-free.
 

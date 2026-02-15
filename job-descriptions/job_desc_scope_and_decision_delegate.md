@@ -1,5 +1,7 @@
 # Job Description: Scope & Decision Delegate
 
+**Department**: Work Intake
+
 ## Role Overview
 The Scope & Decision Delegate makes routine decisions at points in the workflow that currently require human intervention. By applying predefined criteria, confidence thresholds, historical precedent, and decision frameworks, this role autonomously resolves the majority of scope clarifications, quality-based filtering decisions, and mid-process judgment calls — escalating to humans only when the decision is genuinely ambiguous, high-stakes, or unprecedented. This directly reduces mandatory human loops and enables the department to operate more autonomously.
 
